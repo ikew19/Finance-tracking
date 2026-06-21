@@ -55,7 +55,7 @@ function Navbar() {
                 antialiased flex justify-center gap-5"> 
         <div className='place-self-center'>
               <Logo  className='max-h-24 w-16 text-gray-400 bg-amber-50 rounded-full
-            '/>
+            drop-shadow-lg'/>
         </div>
         <p className='text-lg font-semibold place-self-center'>Profil</p>
       </footer>

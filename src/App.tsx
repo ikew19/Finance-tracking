@@ -11,14 +11,14 @@ function App() {
 
   return (
     
-    <div className="flex h-screen "> {/* wrapper flex */}
+    <div className="flex h-screen bg-stone-200"> {/* wrapper flex */}
       <aside className="bg-emerald-700 h-full min-w-1/5
       rounded-br-lg flex flex-col"> {/* sidebar */}
       <Navbar />
 
     </aside>
 
-    <div className="p-4">
+    <div className="p-4 w-screen">
         <Routes>
           <Route path='/transactions' element={<Transactions/>} />
           <Route path='/comptes' element={<Comptes/>} />
