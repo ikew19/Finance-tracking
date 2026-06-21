@@ -189,3 +189,10 @@ body { margin: 0 }
     border-right-color: var(--border);
   }
 }
+
+a.active {
+  background-color: #024433;
+  border-top-left-radius: var(--radius-lg); /* 0.5rem (8px) */
+  border-bottom-left-radius: var(--radius-lg); /* 0.5rem (8px) */
+
+}
