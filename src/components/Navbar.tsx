@@ -1,5 +1,6 @@
 //@ts-check
 import { NavLink } from "react-router-dom";
+import Logo from '../assets/profile.svg?react';
 
 function Navbar() {
   return (
@@ -47,6 +48,17 @@ function Navbar() {
           </li>
         </NavLink>
       </ol>
+
+      <main className="flex-1" />
+
+      <footer className=" min-h-24 text-neutral-100 
+                antialiased flex justify-center gap-5"> 
+        <div className='place-self-center'>
+              <Logo  className='max-h-24 w-16 text-gray-400 bg-amber-50 rounded-full
+            '/>
+        </div>
+        <p className='text-lg font-semibold place-self-center'>Profil</p>
+      </footer>
     </>
   );
 }
