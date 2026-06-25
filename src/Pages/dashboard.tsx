@@ -155,7 +155,7 @@ function Dashboard() {
     ])
 
     return (
-        <div className="bg-gray-100 min-h-screen min-w-screen m-0 pt-2">
+        <div className="bg-gray-100 min-h-screen m-0 pt-2">
             
             <div className="flex justify-between items-center m-3 flex-col sm:flex-row m-5">
                 <div className="text-left flex-1">
