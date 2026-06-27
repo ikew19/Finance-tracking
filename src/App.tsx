@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import Dashboard from './Pages/dashboard'
+
 import Navbar from './components/Navbar'
 import { Routes, Route } from 'react-router-dom'
 import Transactions from './Pages/Transactions'
 import Comptes from './Pages/Comptes'
+import Budgets from './Pages/Budgets'
+import Dashboard from './Pages/dashboard'
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
             <Route path='/transactions' element={<Transactions/>} />
             <Route path='/comptes' element={<Comptes/>} />
             <Route path='/dashboard' element={<Dashboard/>}/>
+            <Route path='/budgets' element={<Budgets/>}/>
           </Routes>
       </div>
     </div>

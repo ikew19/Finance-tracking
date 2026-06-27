@@ -80,8 +80,8 @@ function renderMonthSaving(saving: Array<monthSaving>) {
         saving.map(el => {
             const h = 100 - (el.saving*100)/m
             return (
-                <div className="h-[100%] w-12">
-                    <span>{toCurrency(el.saving)}</span>
+                <div className="h-[100%] w-1/8 text-center">
+                    <p className="text-[0.5rem]">{toCurrency(el.saving)}</p>
                     <div className="h-[80%] bg-green-100">
                         <div style={{height: `${h}%`}} className="bg-gray-100"></div>
                     </div>
@@ -96,11 +96,16 @@ function renderTransactions(transactions: Array<transaction>) {
     return (
         transactions.map(el => {
             return (
-                <div className="list-row grid grid-cols-4 gap-4 text-left">
-                    <p className="font-bold">{el.nom}</p>
-                    <p className="bg-green-100 text-center w-fit h-fit rounded-2xl px-2">{el.categorie}</p>
-                    <p>{el.compte}</p>
-                    <p className={`text-right text-base font-bold ${el.amount < 0?'text-red-500':''}`}>{toCurrency(el.amount)}</p>
+                <div className="border-b-[0.5px] border-gray-200 pb-3">
+                    <div className="flex items-center">
+                        <p className="font-bold">{el.nom}</p>
+                        <p className={`text-right text-sm font-bold ${el.amount < 0?'text-red-500':''}`}>{toCurrency(el.amount)}</p>
+                    </div>
+                    <div className="text-xs flex flex-cols justify-between">
+                        <span className="bg-green-100 w-fit h-fit rounded-2xl px-2">{el.categorie}</span>
+                        <span>{el.compte}</span>
+                    </div>
+                    
                 </div>
             )
         })
@@ -131,13 +136,13 @@ function Dashboard() {
         {
             nom: "Loyer",
             categorie: "Logement",
-            compte: "Compte courant",
+            compte: "courant",
             amount: -1450.00
         },
         {
             nom: "Salaire",
             categorie: "Revenu",
-            compte: "Compte courant",
+            compte: "courant",
             amount: 2000.00
         },
         {
@@ -204,7 +209,7 @@ function Dashboard() {
                 <section className="card bg-white p-5">
                     <p className="card-title">Épargne, 6 derniers mois</p>
                     <div className="divider divider-vertical"></div>
-                    <div className="card-body h-50 flex flex-row justify-between">
+                    <div className="card-body h-50 flex flex-row flex-wrap justify-center">
                         {renderMonthSaving(monthSaving)}
                     </div>
                 </section>
