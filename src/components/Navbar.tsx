@@ -41,7 +41,7 @@ function Navbar() {
       </ol>
       <footer className="min-h-24 text-neutral-100 antialiased ml-3"> 
         <div className="flex items-center group gap-3 text-left">
-          <div
+          <div type={() => setIsOpen(!isOpen)}
               className="bg-emerald-600 p-3 rounded-full cursor-pointer">
             <User/>
             {isOpen && 

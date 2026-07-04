@@ -4,7 +4,7 @@
 const CheckingAccount = ({amount}: {amount:number}) => {
   return (
     <>
-      <div className="h-56 w-full max-w-xl rounded-2xl border border-slate-200 bg-white bg-gradient-to-r from-white-100 to-gray-100 p-6 shadow-xl sm:w-96">
+      <div className="h-56 max-w-xl rounded-2xl border border-slate-200 bg-white bg-gradient-to-r from-white-100 to-gray-100 p-6 shadow-xl w-[350px]">
         <div className="flex items-center justify-between">
           <div>
             <span className="text-xs font-semibold uppercase tracking-wider text-black/80">
@@ -31,7 +31,7 @@ const CheckingAccount = ({amount}: {amount:number}) => {
 const VisaAccount = ({amount}: {amount:number}) => {
   return (
     <>
-      <div className="h-56 w-full max-w-sm rounded-2xl border border-slate-200 bg-white bg-gradient-to-r from-white-100 to-gray-100 p-6 shadow-xl sm:w-96">
+      <div className="h-56 w-[350px] max-w-sm rounded-2xl border border-slate-200 bg-white bg-gradient-to-r from-white-100 to-gray-100 p-6 shadow-xl">
         <div className="flex items-center justify-between">
           <div>
             <span className="text-xs font-semibold uppercase tracking-wider text-black/80">
@@ -60,7 +60,7 @@ const VisaAccount = ({amount}: {amount:number}) => {
 const SavingsAccount = ({amount}: {amount:number}) => {
   return (
     <>
-      <div className="h-56 w-full max-w-sm rounded-2xl border border-slate-200 bg-white bg-gradient-to-r from-white-100 to-gray-100 p-6 shadow-xl sm:w-96">
+      <div className="h-56 w-[350px] max-w-sm rounded-2xl border border-slate-200 bg-white bg-gradient-to-r from-white-100 to-gray-100 p-6 shadow-xl">
         <div className="flex items-center justify-between">
           <div>
             <span className="text-xs font-semibold uppercase tracking-wider text-black/80">
@@ -86,10 +86,8 @@ const SavingsAccount = ({amount}: {amount:number}) => {
 
 function Comptes() {
   return (
-    <div className="min-h-screen px-4 py-6 sm:px-6 lg:px-10">
-
-
-      <main className="mx-auto grid w-full max-w-5xl grid-cols-1 justify-items-center gap-8 pt-10 md:grid-cols-2">
+    <div className="min-h-screen w-full">
+      <main className="mx-auto flex flex-wrap max-w-5xl justify-center items-center gap-5 pt-10">
         <CheckingAccount amount={15000} />
         <SavingsAccount amount={5000} />
         <VisaAccount amount={2000} />
