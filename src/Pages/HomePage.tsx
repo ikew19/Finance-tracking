@@ -4,6 +4,7 @@ import {Routes, Route} from 'react-router-dom';
 import Transactions from './Transactions';
 import Comptes from './Comptes';
 import {useState} from 'react';
+import Budgets from './Budgets';
 
 function HomePage() {
     const [user, setUser] = useState('John Doe')
@@ -33,6 +34,7 @@ function HomePage() {
             <Route path='transactions' element={<Transactions/>} />
             <Route path='comptes' element={<Comptes/>} />
             <Route path='dashboard' element={<Dashboard/>}/>
+            <Route path='budgets' element={<Budgets/>}/>
           </Routes>
       </div>
     </div>
