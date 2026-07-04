@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
