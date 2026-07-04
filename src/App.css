@@ -4,3 +4,7 @@
 button {
   cursor: pointer;
 }
+
+tr, td, th {
+  padding: 10px;
+}

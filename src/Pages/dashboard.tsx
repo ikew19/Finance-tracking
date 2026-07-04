@@ -157,10 +157,22 @@ function Dashboard() {
             amount: -84.32
         }
     ])
+    const user = 'John Doe'
+    const date = new Date().toDateString()
 
     return (
         <div className="bg-gray-100 min-h-screen m-0 pt-2">
-            
+            <div className="flex justify-between items-center m-3 flex-col sm:flex-row m-5">
+                <div className="text-left flex-1">
+                    <h2>Bonjour, { user }</h2>
+                    <span>Voici où en sont vos finances </span>
+                </div>
+                <div className="flex items-center gap-4 bg-white rounded-3xl p-2 px-5">
+                    <button className="rounded-3xl py-2 px-4 hover:bg-gray-200">&lt;</button>
+                    <p>{date}</p>
+                    <button className="rounded-3xl py-2 px-4 hover:bg-gray-200 hover:">&gt;</button>
+                </div>
+            </div>
 
             {renderFlux(amountIn, amountOut)}
 

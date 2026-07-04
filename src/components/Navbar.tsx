@@ -14,25 +14,25 @@ function Navbar() {
         <h1 className="text-neutral-100 text-3xl font-mono hidden sm:block">F-track</h1>
       </div>
       <ol className="list text-left text-white">
-        <NavLink to="/home/dashboard">
+        <NavLink to="/">
           <li className="list-row group hover:translate-x-5 hover:bg-emerald-500 rounded-full transition w-fit">
             <LayoutDashboard/>
             <span className="hidden group-hover:block sm:block">Dashboard</span>
           </li>
         </NavLink>
-        <NavLink to="/home/comptes">
+        <NavLink to="/comptes">
           <li className="list-row group hover:translate-x-5 hover:bg-emerald-500 rounded-full transition w-fit">
             <Wallet/>
             <span className="hidden group-hover:block sm:block">Comptes</span>
           </li>
         </NavLink>
-        <NavLink to="/home/transactions">
+        <NavLink to="/transactions">
           <li className="list-row group hover:translate-x-5 hover:bg-emerald-500 rounded-full transition w-fit">
             <ArrowLeftRight/>
             <span className="hidden group-hover:block sm:block">Transactions</span>
           </li>
         </NavLink>
-        <NavLink to="/home/budgets">
+        <NavLink to="/budgets">
           <li className="list-row group hover:translate-x-5 hover:bg-emerald-500 rounded-full transition w-fit">
             <HandCoins/>
             <span className="hidden group-hover:block sm:block">Budgets</span>
@@ -41,7 +41,7 @@ function Navbar() {
       </ol>
       <footer className="min-h-24 text-neutral-100 antialiased ml-3"> 
         <div className="flex items-center group gap-3 text-left">
-          <div type={() => setIsOpen(!isOpen)}
+          <div
               className="bg-emerald-600 p-3 rounded-full cursor-pointer">
             <User/>
             {isOpen && 
