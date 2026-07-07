@@ -13,7 +13,7 @@ function toCurrency(amount: number) {
 function renderFlux(amountIn: number, amountOut:number) {
     const total = Math.max(amountIn, amountOut)
     return (
-        <div className="card card-body bg-white m-5">
+        <div className="card card-body bg-white m-5 text-black/80">
             <section className="flex flex-col justify-between mb-3 sm:flex-row">
                 <div className="text-left">
                     <p className="card-title">Flux de mai</p>
@@ -161,7 +161,7 @@ function Dashboard() {
     const date = new Date().toDateString()
 
     return (
-        <div className="bg-gray-100 min-h-screen m-0 pt-2">
+        <div className="bg-gray-100 min-h-screen m-0 pt-2 text-black/80">
             <div className="flex justify-between items-center m-3 flex-col sm:flex-row m-5">
                 <div className="text-left flex-1">
                     <h2>Bonjour, { user }</h2>

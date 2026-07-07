@@ -20,7 +20,7 @@ function Budgets() {
     ]
     return (
         <div>
-            <div className="flex justify-between items-center m-3 flex-col sm:flex-row m-5">
+            <div className="flex justify-between items-center m-3 flex-col sm:flex-row m-5 text-black/80">
                 <div className="text-left flex-1">
                     <h2>Bonjour, { user }</h2>
                     <span>Voici où en sont vos finances </span>
@@ -31,7 +31,7 @@ function Budgets() {
                     <button className="rounded-3xl py-2 px-4 hover:bg-gray-200 hover:">&gt;</button>
                 </div>
             </div>
-            <div className="card card-body bg-white m-5">
+            <div className="card card-body bg-white m-5 text-black/80">
                 <div className="flex justify-between mb-2">
                     <p className="card-title">Budget du mois</p>
                     <span className="text-gray-400">DÉPENSÉ/PRÉVU</span>
