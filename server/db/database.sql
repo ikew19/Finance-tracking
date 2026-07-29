@@ -1,4 +1,4 @@
-CREATE DATABASE financedb;
+--CREATE DATABASE financedb;
 
 CREATE TABLE IF NOT EXISTS utilisateurs (
     idU VARCHAR(30) PRIMARY KEY,
@@ -57,3 +57,5 @@ CREATE TRIGGER set_transaction_type
     AFTER INSERT ON transactions
     FOR EACH ROW
     EXECUTE FUNCTION update_transaction_type();
+
+SELECT current_database(); 
