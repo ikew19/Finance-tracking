@@ -21,19 +21,45 @@ model comptes {
 model transactions {
   idt         BigInt   @id @default(autoincrement())
   numc        String?  @db.VarChar(19)
+  idc     String?
   montant     Int?
   description String?
-  categorie   String?
   typet       String?
+  categorie categories? @relation(fields: [idc], references: [idc])
+  datet       DateTime @default(now())
   comptes     comptes? @relation(fields: [numc], references: [numc], onDelete: Cascade)
 }
 
 model utilisateurs {
-  idu     String    @id @db.VarChar(30)
+  idu     String    @id @default(cuid())
   nom     String
   email   String    @unique
   mdp     String?
   comptes comptes[]
+  budgets    budgets[]
+  categories categories[]
+}
+
+model categories {
+  idc String   @id @default(cuid())
+  nom   String   @unique
+  idu   String?  // null = catégorie globale, sinon catégorie perso de l'utilisateur
+  user  utilisateurs? @relation(fields: [idu], references: [idu], onDelete: Cascade)
+
+  transactions transactions[]
+  budgets      budgets[]
+}
+
+model budgets {
+  idb        String   @id @default(cuid())
+  idu        String
+  idc        String
+  montantPrevu Int
+  mois       Int      // 1-12
+  annee      Int
+  user       utilisateurs @relation(fields: [idu], references: [idu], onDelete: Cascade, onUpdate: Cascade)
+  categorie    categories   @relation(fields: [idc], references: [idc])
+  @@unique([idu, idc, mois, annee])
 }
 
 enum type_card {
