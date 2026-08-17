@@ -1,6 +1,6 @@
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
+
 }
 
 datasource db {
@@ -9,25 +9,28 @@ datasource db {
 
 model comptes {
   numc         String         @id @db.VarChar(19)
-  idu          String?        @db.VarChar(30)
-  nom          String         @unique
-  solde        Int?           @default(0)
+  idu          String        @db.VarChar(30)
+  nom          String      
+  solde        Int           @default(0)
   typec        type_card
-  utilisateurs utilisateurs?  @relation(fields: [idu], references: [idu], onDelete: Cascade)
+  utilisateurs utilisateurs  @relation(fields: [idu], references: [idu], onDelete: Cascade)
   transactions transactions[]
+  @@unique([idu, nom])
 }
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 model transactions {
   idt         BigInt   @id @default(autoincrement())
-  numc        String?  @db.VarChar(19)
-  idc     String?
+  numc        String  @db.VarChar(19)
+  idc     String? 
   montant     Int?
   description String?
   typet       String?
   categorie categories? @relation(fields: [idc], references: [idc])
   datet       DateTime @default(now())
   comptes     comptes? @relation(fields: [numc], references: [numc], onDelete: Cascade)
+  @@index([numc])                       
+  @@index([idc])
 }
 
 model utilisateurs {
@@ -42,12 +45,13 @@ model utilisateurs {
 
 model categories {
   idc String   @id @default(cuid())
-  nom   String   @unique
+  nom   String
   idu   String?  // null = catégorie globale, sinon catégorie perso de l'utilisateur
   user  utilisateurs? @relation(fields: [idu], references: [idu], onDelete: Cascade)
 
   transactions transactions[]
   budgets      budgets[]
+  @@unique([idu, nom])
 }
 
 model budgets {
