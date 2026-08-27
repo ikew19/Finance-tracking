@@ -40,21 +40,18 @@ CREATE TABLE IF NOT EXISTS transactions (
 
 CREATE OR REPLACE FUNCTION update_transaction_type()
 RETURNS TRIGGER AS $$
-DECLARE type_name TEXT;
 BEGIN
     IF NEW.montant < 0 THEN
-        type_name := 'depense';
+        NEW.typet := 'depense';
     ELSE
-        type_name := 'revenu';
+        NEW.typet := 'revenu';
     END IF;
-    
-    UPDATE transactions SET typeT = type_name WHERE idT = NEW.idT;
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER set_transaction_type
-    AFTER INSERT ON transactions
+    BEFORE INSERT ON transactions
     FOR EACH ROW
     EXECUTE FUNCTION update_transaction_type();
 
